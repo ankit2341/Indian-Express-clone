@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="allcss/header.css">
+    <title>results</title>
+</head>
+<style>
+    #results{
+        width: 81%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3,25%);
+        grid-template-rows: repeat(auto,200px);
+        grid-gap: 5% ;
+        margin-left: 18%;
+    }
+    #results img{
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+    }
+    #results>div{
+        border: 1px soild black;
+        border-radius: 10px;
+    }
+    #results h3{
+        margin-top: 20px;
+    }
+    #results p{
+        margin-top: 10px;
+        font-size: small;
+    }
+</style>
+<body>
+    <div id="header">
+
+    </div>
+
+    <div id="results">
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+    // ----------------------------------------append searchdata-------------------------------------------------
+
+    let searchdata=JSON.parse(localStorage.getItem("searchdata"))||[];
+
+   
+
+    let appenddata=(searchdata)=>{
+        var results=document.getElementById("results");
+
+        results.innerHTML=null;
+
+         searchdata.forEach((el)=>{
+
+            let div=document.createElement("div");
+            div.setAttribute("id","searchdiv");
+            div.style.border="1px solid black"
+            div.style.borderRadius="20px";
+            div.style.padding="20px 20px 40px 20px"
+
+            let img=document.createElement("img");
+            img.src=el.urlToImage;
+
+            let h3=document.createElement("h3");
+            h3.innerText=el.title;
+
+            let p=document.createElement("p");
+            p.innerText=el.publishedAt;
+
+            div.append(img,h3,p);
+
+             results.append(div);
+         })
+    }
+
+    appenddata(searchdata[0]);
+
+</script>
+<script src="header/header.js" type="module"></script>
+<script src="homepage-scripts/searchresults.js" type="module"></script>
+
+<!-- ------------------------------------searchinput-------------------------------------------------- -->
+
+<script>
+
+let searchresults=async()=>{
+    var searchbox=document.getElementById("searchbox1").value;
+
+    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
+
+    let res=await fetch(url);
+    let data=await res.json();
+     searchdata=[];
+    searchdata.push(data.articles);
+
+    localStorage.setItem("searchdata",JSON.stringify(searchdata));
+
+    window.open("searchresults.html")
+
+}
+</script>
+

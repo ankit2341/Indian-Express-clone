@@ -1,0 +1,258 @@
+.allnews{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 900px;
+    height: 480px;
+    -webkit-box-shadow: 0 0 5px 5px #dfdfdf;
+box-shadow: 0 0 5px 5px #dfdfdf;padding: 15px 15px 15px 15px;
+background: #fff;
+margin: auto;
+font-family: Roboto,sans-serif;
+         
+}
+#topnewstories{
+    font-size: 26px;
+    width:600px ;
+    height: 480px;padding-top: 20px;
+    padding-left: 20px;padding-right: 20px;
+font-weight: 700;
+font-family: Roboto,sans-serif;
+}
+#topnewstories:hover{
+    color: #a32020;
+}
+#topnewstories p{
+    color: #000;
+    margin-top: 15px;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px
+}
+#topnewstories img{
+    width: 500px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+#topnewstories-side{
+    display: inline-block;
+    width: 300px;
+    height: 480px;
+    place-content: center;
+    border-left: 1px solid #dbdbdb;
+}
+#topnewstories-side div{
+    border-top: 1px solid #dbdbdb;
+    width: 300px;
+    height: 80px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px
+}
+#topnewstories-side div:hover{
+    color: #a32020;
+}
+#topnewstories-head{
+    width: 900px;
+    height: 40px;
+    margin: auto;margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    -webkit-box-shadow: 0 0 5px 5px #dfdfdf;
+box-shadow: 0 0 5px 5px #dfdfdf;
+background: #fff;
+}
+#topnewstories-head:hover{
+    color: #a32020;
+}
+
+/* --------------------------------trending------------------------------------------ */
+
+.trendingnews{
+    display: flex;
+    align-items: center;
+    width: 900px;padding: 15px 15px 15px 15px;
+    height: 1100px;
+    -webkit-box-shadow: 0 0 5px 5px #dfdfdf;
+box-shadow: 0 0 5px 5px #dfdfdf;
+background: #fff;
+margin: auto;
+font-family: Roboto,sans-serif;
+         
+}
+#trending{
+    
+    display:inline-block;
+    border-top: 1px solid #dbdbdb;
+    width:600px ;
+    height: 1100px;
+padding-right: 20px;
+font-weight: 700;
+font-family: Roboto,sans-serif;
+}
+#trending div{
+    width: 600px;
+    height: 100px;
+    color: #000;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #dbdbdb;
+}
+#trending p{
+    margin-left: 20px;
+}
+#trending p:hover{
+    color: #a32020;
+}
+#trending img{
+    width:110px ;
+    height: 80px;
+    margin-left: 30px;
+}
+#trending-side{
+    display: inline-block;
+    width: 300px;
+    height: 1100px;
+    place-content: center;
+    border-left: 1px solid #dbdbdb;
+}
+#trending-side div{
+    border-top: 1px solid #dbdbdb;
+    width: 280px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px
+}
+#trending-side p:hover{
+    color: #a32020;
+}
+
+
+/* -----------------------------------mumbai news----------------------------------- */
+
+
+#mumbai{
+    font-size: 26px;
+    width:600px ;
+    height: 480px;padding-top: 20px;
+    padding-left: 20px;padding-right: 20px;
+font-weight: 700;
+font-family: Roboto,sans-serif;
+}
+#mumbai:hover{
+    color: #a32020;
+}
+#mumbai p{
+    color: #000;
+    margin-top: 15px;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px
+}
+#mumbai img{
+    width: 500px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+#mumbai-side{
+    display: inline-block;
+    width: 300px;
+    height: 480px;
+    place-content: center;
+    border-left: 1px solid #dbdbdb;
+}
+#mumbai-side div{
+    border-top: 1px solid #dbdbdb;
+    width: 300px;
+    height: 80px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px
+}
+#mumbai-side div:hover{
+    color: #a32020;
+}
+#topnewstories-head{
+    width: 900px;
+    height: 40px;
+    margin: auto;margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    -webkit-box-shadow: 0 0 5px 5px #dfdfdf;
+box-shadow: 0 0 5px 5px #dfdfdf;
+background: #fff;
+}
+#topnewstories-head:hover{
+    color: #a32020;
+}
+
+/* --------------------------------express explained------------------------------------------- */
+ 
+#main-e-ex{
+    height:500px;
+    width: 900px;
+    border: 3px solid #7c8992;
+    box-shadow: 0 0 5px 5px #dfdfdf;
+    margin: auto;
+    margin-top: 30px;
+}
+#express-explained{
+    width: 900px;
+    height: 350px;
+    border-top: 1px solid #dbdbdb;
+}
+#e-ex{
+    width: 900px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 30px;
+}
+#e-ex img{
+    width: 200px;
+    height: 50px;
+}
+
+#express-explained img{
+    width: 800px;
+    margin-left: 50px; margin-top: 20px;
+    height: 350px;
+    animation: fadein 2s infinite;
+    position: absolute;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 1;
+    }
+}
