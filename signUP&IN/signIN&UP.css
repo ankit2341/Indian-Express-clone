@@ -1,0 +1,125 @@
+#main{
+    width: 30%;
+    height: 840px;
+    margin: auto;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+ text-align: center;
+ margin-top: 3%;
+ border-radius: 20px;
+ padding: 0.5%;
+}
+#main>div>img{
+    width: 20px;
+    height: 20px;
+    margin-right: 6%;
+    margin-top: 3%;
+}
+#top{
+    color: gray;
+    margin-top: -4%;
+   
+}
+
+h1{
+    margin: 20px;
+    font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#main>div{
+    width: 85%;
+    height: 45px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgb(205, 227, 235);
+    margin-bottom: 4%;
+    font-size: 20px;
+    color: gray;
+}
+#Vline{
+    display: flex;
+    border: 1px solid white;
+}
+
+.para
+{
+ 
+    font-size: 20px;
+    color: gray;
+    margin-top: 5%;
+   margin-left: 10%;
+    margin-right: 10%
+    
+    
+    
+}
+input{
+ border: 1px solid rgb(244, 240, 240);
+ border-radius: 10px;
+    height: 30px;
+   width: 80%;
+   margin-bottom: 4%;
+  
+}
+.formLine{
+    margin: auto;
+    width: 85%;
+    
+}
+#signUP{
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline white;
+    
+    
+   
+}
+
+button{
+    width: 85%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: rgb(13, 168, 229);
+    font-weight: bolder;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    background-color: white;
+    border: 1px solid skyblue;
+}
+#lastP{
+margin-top: 2%;
+margin-bottom: 1%;
+}
+#forget{
+    justify-content: flex-end;
+    display: grid;
+    margin-right: 7%;
+    margin-bottom: 3%;
+}
+#nevbar{
+   display: flex;
+
+   
+}
+#nevbar>p>img{
+    width: 15px;
+    height: 20px;
+    margin-bottom: -2.5%;
+
+    
+   }
+   #nevbar>p{
+    color: gray;
+    text-decoration: underline white;
+   }
+  
+
+
+#nevbar>img{
+    width: 200px;
+    height: 50px;
+  margin-left: 30%;
+    
+}
