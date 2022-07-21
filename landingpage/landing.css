@@ -1,0 +1,41 @@
+#landingcont{
+    width:60%;
+    margin: auto;
+    padding:10px;
+}
+#heading{
+    font-size: 40px;
+}
+#sub_heading{
+    font-size: 18px;
+    color: gray;
+    line-height: 25px;
+}
+#line{
+    margin:10px;
+    color: #ccc;
+    background-color: #ccc;
+}
+#date{
+    color: gray;
+}
+#content{
+    width:100%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+#img_video{
+    padding: 10px;
+}
+#image{
+    width:100%;
+}
+iframe{
+    width:100%;
+    height:200px;
+    padding:10px 0px;
+}
+#contentappend,#contentappend1{
+    line-height: 30px;
+    font-size: 18px;
+}
