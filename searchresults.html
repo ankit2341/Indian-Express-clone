@@ -9,11 +9,11 @@
 <style>
     #results{
         width: 81%;
-        height: 100vh;
+        height: 1400px;
         display: grid;
         grid-template-columns: repeat(3,25%);
         grid-template-rows: repeat(auto,200px);
-        grid-gap: 5% ;
+        grid-gap: 30px ;
         margin-left: 18%;
     }
     #results img{
@@ -28,17 +28,32 @@
     #results h3{
         margin-top: 20px;
     }
+    #results div:hover{
+        color: #a32020;
+    }
     #results p{
         margin-top: 10px;
         font-size: small;
+    }
+    #footer{
+        margin-top: 1450px;
+    }
+    #search-results{
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: center;
     }
 </style>
 <body>
     <div id="header">
 
     </div>
-
+   <h1 id="search-results"></h1>
     <div id="results">
+
+    </div>
+
+    <div id="footer">
 
     </div>
     
@@ -49,6 +64,10 @@
     // ----------------------------------------append searchdata-------------------------------------------------
 
     let searchdata=JSON.parse(localStorage.getItem("searchdata"))||[];
+    let searchboxls=document.getElementById("search-results");
+    var sbls=JSON.parse(localStorage.getItem("searchbox"))||[];
+
+    searchboxls.innerText=`Search results for ${sbls}`;
 
    
 
@@ -57,27 +76,32 @@
 
         results.innerHTML=null;
 
-         searchdata.forEach((el)=>{
+         for(let i=0;i<20;i++){
 
             let div=document.createElement("div");
             div.setAttribute("id","searchdiv");
             div.style.border="1px solid black"
             div.style.borderRadius="20px";
-            div.style.padding="20px 20px 40px 20px"
+            div.style.padding="20px 20px 40px 20px";
 
             let img=document.createElement("img");
-            img.src=el.urlToImage;
+            img.src=searchdata[i].urlToImage;
 
             let h3=document.createElement("h3");
-            h3.innerText=el.title;
+            h3.innerText=searchdata[i].title;
 
             let p=document.createElement("p");
-            p.innerText=el.publishedAt;
+            p.innerText=searchdata[i].publishedAt;
+
+            div.addEventListener("click",()=>{
+                localStorage.setItem("clicked_item",JSON.stringify(searchdata[i]));
+                window.open("landing.html");
+            })
 
             div.append(img,h3,p);
 
              results.append(div);
-         })
+         }
     }
 
     appenddata(searchdata[0]);
@@ -101,6 +125,7 @@ let searchresults=async()=>{
     searchdata.push(data.articles);
 
     localStorage.setItem("searchdata",JSON.stringify(searchdata));
+    localStorage.setItem("searchbox",JSON.stringify(searchbox));
 
     window.open("searchresults.html")
 

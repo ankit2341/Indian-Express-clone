@@ -1,10 +1,10 @@
-import header from "../header/header.js";
+import {header,footer} from "../header/header.js";
 
 document.getElementById("header").innerHTML=header();
+document.getElementById("footer").innerHTML=footer();
 
 var twitter=document.getElementById("fb");
     twitter.addEventListener("click",function(){
-        console.log("insia");
           window.open("https://twitter.com/IndianExpress?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
     })
 
@@ -15,9 +15,26 @@ var twitter=document.getElementById("fb");
 
 var date = new Date().toUTCString();    
     document.getElementById("date").innerText = date;
+
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("bottomhead");
+
+function myFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    navbar.style.position= "fixed";
+      navbar.style.top="0px";
+      navbar.style.width="100%";
+  } else {
+    navbar.style.position= "static";
+  }
+}
+
+
+// ---------------------------------------------topnew----------------------------------------------------------------
     
 
-const topnewurl=`https://newsapi.org/v2/everything?q=india&from=2022-07-20&sortBy=popularity&apiKey=27d4cbd01e5f40db8b1eacdeafffe25d`;
+const topnewurl=`https://newsapi.org/v2/everything?q=india&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
 
 let gettopnew=async()=>{
 
@@ -44,6 +61,10 @@ let appendtopnew=(data)=>{
     p.innerText=data[0].description;
 
     div.append(h3,img,p);
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
     trending.append(div);
 
 
@@ -56,6 +77,11 @@ let appendtopnew=(data)=>{
       p.innerText=data[i].title;
 
       div.append(p);
+
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
       
       topnewstoriesside.append(div);
    }
@@ -65,7 +91,7 @@ let appendtopnew=(data)=>{
 // ----------------------------------------------------trending--------------------------------------------------
 
 
-const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=27d4cbd01e5f40db8b1eacdeafffe25d`;
+const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
 
 let gettrending=async()=>{
 
@@ -89,6 +115,11 @@ let appendtrending=(data)=>{
     
         let img=document.createElement("img");
         img.src=data[i].urlToImage;
+
+        div.addEventListener("click",()=>{
+            localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+            window.open("landing.html");
+        })
     
         div.append(img,h3);
         trending.append(div);
@@ -101,6 +132,11 @@ let appendtrending=(data)=>{
       let p=document.createElement("p");
       p.innerText=data[i].title;
 
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
+
       div.append(p);
       
       topnewstoriesside.append(div);
@@ -112,7 +148,7 @@ let appendtrending=(data)=>{
 
 
 
-const mumbaiurl=`https://newsapi.org/v2/everything?q=city&from=2022-07-20&sortBy=popularity&apiKey=27d4cbd01e5f40db8b1eacdeafffe25d`;
+const mumbaiurl=`https://newsapi.org/v2/everything?q=mumbai&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
 
 let getmumbai=async()=>{
 
@@ -138,6 +174,11 @@ let appendmumbai=(data)=>{
     let p=document.createElement("p");
     p.innerText=data[0].description;
 
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
+
     div.append(h3,img,p);
     trending.append(div);
 
@@ -151,6 +192,11 @@ let appendmumbai=(data)=>{
       p.innerText=data[i].title;
 
       div.append(p);
+
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
       
       topnewstoriesside.append(div);
    }
@@ -161,7 +207,7 @@ let appendmumbai=(data)=>{
 
 
 
-const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=27d4cbd01e5f40db8b1eacdeafffe25d`;
+const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
 
 let getexexplained=async()=>{
 
@@ -191,6 +237,321 @@ let appendexexplained=(data)=>{
     }
 
 
+// -----------------------------------only on express---------------------------------------------
+
+
+const onlyonurl=`https://newsapi.org/v2/everything?q=exclusive&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+
+let getonlyon=async()=>{
+
+    let res=await fetch(onlyonurl);
+    let data=await res.json();
+
+    appendonlyon(data.articles);
+    
+}
+
+getonlyon();
+
+let appendonlyon=(data)=>{
+    let trending=document.getElementById("onlyon1");
+
+    let div=document.createElement("div");
+    let h3=document.createElement("h4");
+    h3.innerText=data[0].title;
+
+    let img=document.createElement("img");
+    img.src=data[0].urlToImage;
+
+    let p=document.createElement("p");
+    p.innerText=data[0].description;
+
+    div.append(img,h3,p);
+
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
+    trending.append(div);
+
+    let trending1=document.getElementById("onlyon2");
+
+    let div2=document.createElement("div");
+    let img2=document.createElement("img");
+    img2.src=data[1].urlToImage;
+
+    let h32=document.createElement("p");
+    h32.innerText=data[1].title;
+
+    div2.append(img2,h32);
+
+    div2.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[1]));
+        window.open("landing.html");
+    })
+
+    let div3=document.createElement("div");
+    let img3=document.createElement("img");
+    img3.src=data[2].urlToImage;
+
+    let h33=document.createElement("p");
+    h33.innerText=data[2].title;
+
+    div3.append(img3,h33);
+
+    div3.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[2]));
+        window.open("landing.html");
+    })
+
+    trending1.append(div2,div3);
+
+      
+    let topnewstoriesside=document.getElementById("onlyon-side");
+   for(let i=3;i<=8;i++){
+      let div=document.createElement("div");
+
+      let p=document.createElement("p");
+      p.innerText=data[i].title;
+
+      div.append(p);
+
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
+      
+      topnewstoriesside.append(div);
+   }
+}
+
+
+// -------------------------------------------entertainment-------------------------------------------
+
+
+const entertainurl=`https://newsapi.org/v2/everything?q=hollywood&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+
+let getentertain=async()=>{
+
+    let res=await fetch(entertainurl);
+    let data=await res.json();
+
+    appendentertain(data.articles);
+    
+}
+
+getentertain();
+
+let appendentertain=(data)=>{
+    let trending=document.getElementById("enteron1");
+
+    let div=document.createElement("div");
+    let h3=document.createElement("h4");
+    h3.innerText=data[0].title;
+
+    let img=document.createElement("img");
+    img.src=data[0].urlToImage;
+
+    let p=document.createElement("p");
+    p.innerText=data[0].description;
+
+    div.append(img,h3,p);
+
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
+    trending.append(div);
+
+    let trending1=document.getElementById("enteron2");
+
+    let div2=document.createElement("div");
+    let img2=document.createElement("img");
+    img2.src=data[1].urlToImage;
+
+    let h32=document.createElement("p");
+    h32.innerText=data[1].title;
+
+    div2.append(img2,h32);
+    div2.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[1]));
+        window.open("landing.html");
+    })
+
+    let div3=document.createElement("div");
+    let img3=document.createElement("img");
+    img3.src=data[2].urlToImage;
+
+    let h33=document.createElement("p");
+    h33.innerText=data[2].title;
+
+    div3.append(img3,h33);
+    div3.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[2]));
+        window.open("landing.html");
+    })
+
+    trending1.append(div2,div3);
+
+      
+    let topnewstoriesside=document.getElementById("enteron-side");
+   for(let i=3;i<=8;i++){
+      let div=document.createElement("div");
+
+      let p=document.createElement("p");
+      p.innerText=data[i].title;
+
+      div.append(p);
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
+      
+      topnewstoriesside.append(div);
+   }
+}
 
 
 
+// ---------------------------------------sports-----------------------------------------------
+
+
+
+const sporturl=`https://newsapi.org/v2/everything?q=football&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+
+let getsport=async()=>{
+
+    let res=await fetch(sporturl);
+    let data=await res.json();
+
+    appendsport(data.articles);
+    
+}
+
+getsport();
+
+let appendsport=(data)=>{
+    let trending=document.getElementById("sporton1");
+
+    let div=document.createElement("div");
+    let h3=document.createElement("h4");
+    h3.innerText=data[0].title;
+
+    let img=document.createElement("img");
+    img.src=data[0].urlToImage;
+
+    let p=document.createElement("p");
+    p.innerText=data[0].description;
+
+    div.append(img,h3,p);
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
+
+    trending.append(div);
+
+    let trending1=document.getElementById("sporton2");
+
+    let div2=document.createElement("div");
+    let img2=document.createElement("img");
+    img2.src=data[1].urlToImage;
+
+    let h32=document.createElement("p");
+    h32.innerText=data[1].title;
+
+    div2.append(img2,h32);
+    div2.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[1]));
+        window.open("landing.html");
+    })
+
+    let div3=document.createElement("div");
+    let img3=document.createElement("img");
+    img3.src=data[2].urlToImage;
+
+    let h33=document.createElement("p");
+    h33.innerText=data[2].title;
+
+    div3.append(img3,h33);
+
+    div3.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[2]));
+        window.open("landing.html");
+    })
+
+    trending1.append(div2,div3);
+
+      
+    let topnewstoriesside=document.getElementById("sporton-side");
+   for(let i=3;i<=8;i++){
+      let div=document.createElement("div");
+
+      let p=document.createElement("p");
+      p.innerText=data[i].title;
+
+      div.append(p);
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
+      
+      topnewstoriesside.append(div);
+   }
+}
+
+
+// ------------------------------------------education-----------------------------------
+
+
+const educationurl=`https://newsapi.org/v2/everything?q=education&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+
+let geteducation=async()=>{
+
+    let res=await fetch(educationurl);
+    let data=await res.json();
+
+    appendeducation(data.articles);
+    
+}
+
+geteducation();
+
+let appendeducation=(data)=>{
+    let trending=document.getElementById("educationn");
+
+    let div=document.createElement("div");
+    let h3=document.createElement("h4");
+    h3.innerText=data[0].title;
+
+    let img=document.createElement("img");
+    img.src=data[0].urlToImage;
+
+    let p=document.createElement("p");
+    p.innerText=data[0].description;
+
+    div.append(h3,img,p);
+    div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[0]));
+        window.open("landing.html");
+    })
+    trending.append(div);
+
+
+      
+    let topnewstoriesside=document.getElementById("educationn-side");
+   for(let i=1;i<=6;i++){
+      let div=document.createElement("div");
+
+      let p=document.createElement("p");
+      p.innerText=data[i].title;
+
+      div.append(p);
+      div.addEventListener("click",()=>{
+        localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+        window.open("landing.html");
+    })
+      
+      topnewstoriesside.append(div);
+   }
+}
