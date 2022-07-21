@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./allcss/header.css">
+    <link rel="stylesheet" href="./India_and_city_Page/india.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <div id="main_container">
+        <div id="sub_navbar">
+            <h3>CITIES |</h3>
+            <p id="delhi">DELHI</p>
+            <p id="mumbai">MUMBAI</p>
+            <p id="pune">PUNE</p>
+            <p id="banglore">BANGLORE</p>
+            <p id="chandigarh">CHANDIGARH</p>
+            <p id="ahmedabad">AHMEDABAD</p>
+            <p id="lucknow">LUCKNOW</p>
+            <p id="chennai">CHENNAI</p>
+            <p id="hyderabad">HYDERABAD</p>
+            <p id="kolkata">KOLKATA</p>
+        </div>
+        <div id="slideshow">
+            <div id="slideshowdiv"></div>
+            <div id="slideshowdata"></div>
+        </div>
+        <hr id="line">
+        <div id="india_page"></div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+
+</html>
+<script src="./India_and_city_Page/city.js" type="module"></script>
+<script src="./header/header.js" type="module"></script>
+
+
+<script type="module">
+    // Header and footer
+
+import {header,footer} from "../header/header.js";
+
+document.getElementById("header").innerHTML=header();
+document.getElementById("footer").innerHTML=footer();
+
+var twitter=document.getElementById("fb");
+    twitter.addEventListener("click",function(){
+          window.open("https://twitter.com/IndianExpress?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
+    })
+
+    var fb=document.getElementById("twitter");
+    fb.addEventListener("click",function(){
+          window.open("https://www.facebook.com/indianexpress");
+    })
+
+var date = new Date().toUTCString();    
+    document.getElementById("date").innerText = date;
+
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("bottomhead");
+
+function myFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    navbar.style.position= "fixed";
+      navbar.style.top="0px";
+      navbar.style.width="100%";
+  } else {
+    navbar.style.position= "static";
+  }
+}
+ //  Search code 
+ document.getElementById("searchres").addEventListener("click",()=>{
+    searchresults();
+ })
+let searchresults=async()=>{
+    var searchbox=document.getElementById("searchbox1").value;
+
+    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
+
+    let res=await fetch(url);
+    let data=await res.json();
+    let searchdata=[];
+    searchdata.push(data.articles);
+
+    localStorage.setItem("searchdata",JSON.stringify(searchdata));
+    localStorage.setItem("searchbox",JSON.stringify(searchbox));
+
+    window.open("searchresults.html")
+
+}
+</script>

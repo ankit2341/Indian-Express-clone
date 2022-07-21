@@ -1,0 +1,142 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: Roboto, sans-serif;
+}
+#main_container{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+#sub_navbar{
+    display: flex;
+    align-items: center;
+    width:100%;
+    justify-content: space-between;
+    background-color: #f6f6f6;
+    padding:5px 30px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+   
+}
+#sub_navbar h3{
+    color: #9c2121
+}
+#sub_navbar p{
+font-size: 13px;
+font-weight:bold;
+color: gray;
+}
+#sub_navbar p:hover{
+    color: #dd1e1e;
+    cursor: pointer;
+}
+#slideshow{
+    width:100%;
+    color: rgb(97, 84, 84);
+    margin: 20px 0px;
+    padding:20px;
+    border: 1px solid;
+    display: flex;
+    gap:20px;
+}
+#slideshowdiv{
+    width:70%;
+}
+#slideshowdata{
+    width:30%;
+}
+#slideshowdata:hover,#slideshowdiv:hover,#india_page>div:hover{
+    cursor: pointer;
+}
+#slideshowdata h4{
+    margin-bottom: 10px;
+}
+#slideshowdata img{
+    width:100%;
+}
+#slideshowdiv img{
+    width: 100%;
+    height:300px;
+}
+#line{
+    font-weight: bolder;
+   margin:20px 0px;
+   background-color: gray;
+}
+#educaton_page{
+    width:60%;
+   line-height: 20px;
+   padding:10px;
+}
+#educaton_page>div{
+    width:100%;
+    display: flex;
+    /* grid-template-columns: 30% 70%; */
+     padding:20px;
+    gap:20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+#content h3{
+    font-weight: bold;
+}
+#content h3+p{
+margin:10px 0px
+}
+#educaton_page>div>div{
+    width:50%;
+}
+#educaton_page>div>div img{
+    width:100%;
+}
+#mainPage{
+    display: flex;
+    width: 100%;
+}
+#sidebar{
+    width: 33%;
+  
+    margin-left: 2%;
+}
+#sidebar>div{
+    display: flex;
+    width: 98%;
+    height: 100px;
+    background-color: rgb(234, 234, 239);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 4%;
+}
+#sidebar>div>img{
+    width: 100px;
+    height: 100px;
+    margin-right: 1%;
+}
+h4{
+    display: grid;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 21%;
+    color: gray;
+}
+#gridDiv{
+ 
+  width: 100%;
+  height: 250px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;  
+}
+#line2{
+    font-weight: bolder;
+   margin:20px 0px;
+   background-color: rgb(77, 75, 75);
+   height: 5px;
+}
+#gridDiv>div{
+    width: 100%;
+    height: 250px;
+}
+#gridDiv>div>img{
+    width: 100%;
+    height: 200px;
+}

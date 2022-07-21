@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="allcss/header.css">
+    <title>results</title>
+</head>
+<style>
+    #results{
+        width: 81%;
+        height: 1400px;
+        display: grid;
+        grid-template-columns: repeat(3,25%);
+        grid-template-rows: repeat(auto,200px);
+        grid-gap: 30px ;
+        margin-left: 18%;
+    }
+    #results img{
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+    }
+    #results>div{
+        border: 1px soild black;
+        border-radius: 10px;
+    }
+    #results h3{
+        margin-top: 20px;
+    }
+    #results div:hover{
+        color: #a32020;
+    }
+    #results p{
+        margin-top: 10px;
+        font-size: small;
+    }
+    #footer{
+        margin-top: 1450px;
+    }
+    #search-results{
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="header">
+
+    </div>
+   <h1 id="search-results"></h1>
+    <div id="results">
+
+    </div>
+
+    <div id="footer">
+
+    </div>
+    
+</body>
+</html>
+<script>
+
+    // ----------------------------------------append searchdata-------------------------------------------------
+
+    let searchdata=JSON.parse(localStorage.getItem("searchdata"))||[];
+    let searchboxls=document.getElementById("search-results");
+    var sbls=JSON.parse(localStorage.getItem("searchbox"))||[];
+
+    searchboxls.innerText=`Search results for ${sbls}`;
+
+   
+
+    let appenddata=(searchdata)=>{
+        var results=document.getElementById("results");
+
+        results.innerHTML=null;
+
+         for(let i=0;i<20;i++){
+
+            let div=document.createElement("div");
+            div.setAttribute("id","searchdiv");
+            div.style.border="1px solid black"
+            div.style.borderRadius="20px";
+            div.style.padding="20px 20px 40px 20px";
+
+            let img=document.createElement("img");
+            img.src=searchdata[i].urlToImage;
+
+            let h3=document.createElement("h3");
+            h3.innerText=searchdata[i].title;
+
+            let p=document.createElement("p");
+            p.innerText=searchdata[i].publishedAt;
+
+            div.addEventListener("click",()=>{
+                localStorage.setItem("clicked_item",JSON.stringify(searchdata[i]));
+                window.location.href="../landingpage/landing.html";
+            })
+
+            div.append(img,h3,p);
+
+             results.append(div);
+         }
+    }
+
+    appenddata(searchdata[0]);
+
+</script>
+<script src="header/header.js" type="module"></script>
+<script src="homepage-scripts/searchresults.js" type="module"></script>
+
+<!-- ------------------------------------searchinput-------------------------------------------------- -->
+
+<script>
+
+let searchresults=async()=>{
+    var searchbox=document.getElementById("searchbox1").value;
+
+    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
+
+    let res=await fetch(url);
+    let data=await res.json();
+     searchdata=[];
+    searchdata.push(data.articles);
+
+    localStorage.setItem("searchdata",JSON.stringify(searchdata));
+    localStorage.setItem("searchbox",JSON.stringify(searchbox));
+
+    window.open("searchresults.html")
+
+}
+</script>
+
