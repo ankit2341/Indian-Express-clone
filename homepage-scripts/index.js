@@ -34,7 +34,7 @@ function myFunction() {
 // ---------------------------------------------topnew----------------------------------------------------------------
     
 
-const topnewurl=`https://newsapi.org/v2/everything?q=india&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const topnewurl=`https://newsapi.org/v2/everything?q=india&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let gettopnew=async()=>{
 
@@ -91,7 +91,7 @@ let appendtopnew=(data)=>{
 // ----------------------------------------------------trending--------------------------------------------------
 
 
-const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let gettrending=async()=>{
 
@@ -148,7 +148,7 @@ let appendtrending=(data)=>{
 
 
 
-const mumbaiurl=`https://newsapi.org/v2/everything?q=mumbai&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const mumbaiurl=`https://newsapi.org/v2/everything?q=mumbai&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getmumbai=async()=>{
 
@@ -207,7 +207,7 @@ let appendmumbai=(data)=>{
 
 
 
-const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getexexplained=async()=>{
 
@@ -240,8 +240,7 @@ let appendexexplained=(data)=>{
 // -----------------------------------only on express---------------------------------------------
 
 
-const onlyonurl=`https://newsapi.org/v2/everything?q=exclusive&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
-
+const onlyonurl=`https://newsapi.org/v2/everything?q=exclusive&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`
 let getonlyon=async()=>{
 
     let res=await fetch(onlyonurl);
@@ -329,7 +328,7 @@ let appendonlyon=(data)=>{
 // -------------------------------------------entertainment-------------------------------------------
 
 
-const entertainurl=`https://newsapi.org/v2/everything?q=hollywood&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const entertainurl=`https://newsapi.org/v2/everything?q=hollywood&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getentertain=async()=>{
 
@@ -417,7 +416,7 @@ let appendentertain=(data)=>{
 
 
 
-const sporturl=`https://newsapi.org/v2/everything?q=football&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const sporturl=`https://newsapi.org/v2/everything?q=football&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getsport=async()=>{
 
@@ -504,7 +503,7 @@ let appendsport=(data)=>{
 // ------------------------------------------education-----------------------------------
 
 
-const educationurl=`https://newsapi.org/v2/everything?q=education&from=2022-07-20&sortBy=popularity&apiKey=381e7058fbb74a73b5c2f2abca0b96bf`;
+const educationurl=`https://newsapi.org/v2/everything?q=education&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let geteducation=async()=>{
 
