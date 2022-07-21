@@ -89,8 +89,8 @@ body{
 #bottomhead div:hover{
     border-bottom: 3px solid red;
 }
-#bottomhead a{
-    text-decoration: none;
+#bottomhead div a{
+    text-decoration: none;color: #fff;
 }
 .openBtn {
 background: #f1f1f1;
