@@ -35,14 +35,14 @@ let header=()=>{
     <div><a href="index.html">Home</a></div>
     <div><a href="explained.html">Explained</a></div>
     <div><a href="">Political Pulse</a></div>
-    <div><a href="India_and_city_Page/india.html">India</a></div>
-    <div><a href="India_and_city_Page/city.html">Cities</a></div>
+    <div><a href="india.html">India</a></div>
+    <div><a href="city.html">Cities</a></div>
     <div><a href="project unit 3/entertainment.html">Entertainment</a></div>
     <div><a href="">Sports</a></div>
-    <div><a href="">Education</a></div>
+    <div><a href="education.html">Education</a></div>
     <div><a href="signIN.html">Sign in</a></div>
     <input type="text" id="searchbox1" placeholder="Type to Search">
-    <div onClick="searchresults()"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>
+    <div id="searchres" onClick="searchresults()"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>
     
 </div>
 

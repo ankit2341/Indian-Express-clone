@@ -95,7 +95,7 @@
 
             div.addEventListener("click",()=>{
                 localStorage.setItem("clicked_item",JSON.stringify(searchdata[i]));
-                window.open("landing.html");
+                window.location.href="../landingpage/landing.html";
             })
 
             div.append(img,h3,p);

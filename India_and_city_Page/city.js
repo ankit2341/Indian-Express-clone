@@ -1,4 +1,6 @@
-let Api_Key = "0f51aa777ab440708430933fba93d8a7";
+// let Api_Key = "0f51aa777ab440708430933fba93d8a7";
+// 
+let Api_Key = "480870360edd4e4b9114fe8724deed7d";
 import {getData,append,append_data,appendslide} from "./subnavbar.js"
 
 let url = `https://newsapi.org/v2/everything/?q=delhi&apiKey=${Api_Key}`;
@@ -89,3 +91,21 @@ document.getElementById("hyderabad").addEventListener("click",()=>{
      appendslide(res)
     })
 })
+
+
+let searchresults=async()=>{
+    var searchbox=document.getElementById("searchbox1").value;
+
+    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
+
+    let res=await fetch(url);
+    let data=await res.json();
+     searchdata=[];
+    searchdata.push(data.articles);
+
+    localStorage.setItem("searchdata",JSON.stringify(searchdata));
+    localStorage.setItem("searchbox",JSON.stringify(searchbox));
+
+    window.open("searchresults.html")
+
+}

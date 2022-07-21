@@ -63,7 +63,7 @@ let appendtopnew=(data)=>{
     div.append(h3,img,p);
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
     trending.append(div);
 
@@ -80,7 +80,7 @@ let appendtopnew=(data)=>{
 
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
       
       topnewstoriesside.append(div);
@@ -118,7 +118,7 @@ let appendtrending=(data)=>{
 
         div.addEventListener("click",()=>{
             localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-            window.open("landing.html");
+            window.location.href="../landingpage/landing.html";
         })
     
         div.append(img,h3);
@@ -134,7 +134,7 @@ let appendtrending=(data)=>{
 
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
       div.append(p);
@@ -176,7 +176,7 @@ let appendmumbai=(data)=>{
 
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     div.append(h3,img,p);
@@ -195,7 +195,7 @@ let appendmumbai=(data)=>{
 
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
       
       topnewstoriesside.append(div);
@@ -223,16 +223,16 @@ getexexplained();
 let appendexexplained=(data)=>{
   let expressexplained=document.getElementById("express-explained");
      let i=7;
-        // setInterval(function(){
-        //     if(i==11){
-        //         i=7;
-        //     }
+        setInterval(function(){
+            if(i==11){
+                i=7;
+            }
 
-        //     let img=document.createElement('img');
-        //     img.src=data[i].urlToImage;
+            let img=document.createElement('img');
+            img.src=data[i].urlToImage;
     
-        //     expressexplained.append(img);
-        // i++;},1000);
+            expressexplained.append(img);
+        i++;},1000);
        
     }
 
@@ -269,7 +269,7 @@ let appendonlyon=(data)=>{
 
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
     trending.append(div);
 
@@ -286,7 +286,7 @@ let appendonlyon=(data)=>{
 
     div2.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[1]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     let div3=document.createElement("div");
@@ -300,7 +300,7 @@ let appendonlyon=(data)=>{
 
     div3.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[2]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     trending1.append(div2,div3);
@@ -358,7 +358,7 @@ let appendentertain=(data)=>{
 
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
     trending.append(div);
 
@@ -374,7 +374,7 @@ let appendentertain=(data)=>{
     div2.append(img2,h32);
     div2.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[1]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     let div3=document.createElement("div");
@@ -387,7 +387,7 @@ let appendentertain=(data)=>{
     div3.append(img3,h33);
     div3.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[2]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     trending1.append(div2,div3);
@@ -403,7 +403,7 @@ let appendentertain=(data)=>{
       div.append(p);
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
       
       topnewstoriesside.append(div);
@@ -445,7 +445,7 @@ let appendsport=(data)=>{
     div.append(img,h3,p);
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     trending.append(div);
@@ -462,7 +462,7 @@ let appendsport=(data)=>{
     div2.append(img2,h32);
     div2.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[1]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     let div3=document.createElement("div");
@@ -476,7 +476,7 @@ let appendsport=(data)=>{
 
     div3.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[2]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
 
     trending1.append(div2,div3);
@@ -492,7 +492,7 @@ let appendsport=(data)=>{
       div.append(p);
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
       
       topnewstoriesside.append(div);
@@ -532,7 +532,7 @@ let appendeducation=(data)=>{
     div.append(h3,img,p);
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
     trending.append(div);
 
@@ -548,7 +548,7 @@ let appendeducation=(data)=>{
       div.append(p);
       div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[i]));
-        window.open("landing.html");
+        window.location.href="../landingpage/landing.html";
     })
       
       topnewstoriesside.append(div);
