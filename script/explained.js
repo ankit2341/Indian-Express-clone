@@ -1,19 +1,19 @@
 let api_key= '480870360edd4e4b9114fe8724deed7d';
-let url=`https://newsapi.org/v2/everything?q=explained&apiKey=${api_key}`;
+// let url=`https://newsapi.org/v2/everything?q=explained&apiKey=${api_key}`;
 
-let getData= async()=>{
+export let getData= async(url)=>{
 
     let res= await fetch(url);
     let data= await res.json();
     console.log(data);
-    append(data.articles);
-    append_img(data.articles);
+    return(data.articles);
+    // append_img(data.articles);
 }
-getData()
+// getData()
 
 let i=0;
 
-let append_img=(data)=>{
+export let append_img=(data)=>{
     let container=document.getElementById("big_img");
     container.innerHTML=null;
     data.forEach((el,i)=>{
@@ -36,7 +36,7 @@ let append_img=(data)=>{
     }
 
 
-let append = (data)=>{
+ export let append = (data)=>{
     let news= document.getElementById('news');
     data.forEach((el)=>{
         let img= document.createElement('img')
@@ -52,4 +52,6 @@ let append = (data)=>{
         news.append(content);
 
     })
+
+    
 }
