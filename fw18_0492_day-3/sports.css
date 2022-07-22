@@ -1,0 +1,107 @@
+#top{
+    width: 90%;
+    margin: auto;
+    height: 100px;
+}
+
+#sports_navbar{
+    margin-top: 10%;
+    border: 1px solid rgb(231, 225, 225);
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(219, 236, 236);
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+#task_bar>a{
+    color: #a10a0a;
+    padding-bottom: 10px;
+}
+
+#category>a{
+    color: teal;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none; 
+    
+}
+span{
+    color: rgb(126, 123, 123);
+
+}
+
+
+
+#sliding_image{
+    width:100%;
+    margin: auto;
+    height: 525px;
+    background-image:url(https://images.indianexpress.com/2021/12/Carlsen-2.jpg?resize=450,250);
+    background-size: 100% 100%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    animation: slider 15s infinite linear ;
+    border-radius: 10px;
+}
+@keyframes slider{
+    0%{   background-image:url(https://images.indianexpress.com/2021/12/Carlsen-2.jpg?resize=450,250);
+    }
+    25%{
+        background-image: url(https://images.indianexpress.com/2022/07/neeraj-chopra-8.jpg?resize=450,250);
+    }
+    50%{
+        background-image: url(https://images.indianexpress.com/2018/12/hockey-world-cup-1200-1.jpg);
+    }
+    75%{
+        background-image: url(https://images.indianexpress.com/2022/07/Abdullah-Shafique-1.jpg);
+    }
+}
+
+#middle{
+    height: 450px;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+#middle>div{
+    height: auto;
+    width: 30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    justify-content: space-around;
+    margin: auto;
+   
+}
+#middle>div>img{
+    width: 90%;
+    height: 70%;
+
+}
+#container{
+    margin-top: 30px;
+}
+#container>div{
+    display: flex;
+    /* border: 1px solid red; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 100px;
+    gap: 50px;
+    margin: auto;
+    width: 60%;
+    height: auto;
+    cursor: pointer;
+    
+}
+
+img{
+    height: 230px;
+    width: 300px;
+    /* border: 1px solid green; */
+    padding: 10px;
+    padding-top: 40px;
+    padding-left: 20px;
+}

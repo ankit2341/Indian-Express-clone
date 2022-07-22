@@ -1,0 +1,63 @@
+#top{
+    width: 90%;
+    margin: auto;
+    height: 100px;
+}
+
+#entertainment_navbar{
+    margin-top: 10%;
+    border: 1px solid rgb(231, 225, 225);
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(219, 236, 236);
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+#task_bar>a{
+    color: #a10a0a;
+    padding-bottom: 10px;
+}
+
+#category>a{
+    color: teal;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none; 
+    
+}
+span{
+    color: rgb(126, 123, 123);
+
+}
+
+
+#main>img{
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    margin-left: 150px;
+    cursor: pointer;
+}
+#container>div{
+    display: flex;
+    /* border: 1px solid red; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 100px;
+    gap: 50px;
+    margin: auto;
+    width: 60%;
+    height: auto;
+    cursor: pointer;
+    
+}
+
+img{
+    height: 300px;
+    width: 300px;
+    /* border: 1px solid green; */
+    padding: 10px;
+}
