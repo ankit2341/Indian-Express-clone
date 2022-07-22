@@ -1,11 +1,12 @@
 #top{
-    width: 90%;
+    width: 100%;
     margin: auto;
     height: 100px;
 }
 
 #sports_navbar{
-    margin-top: 10%;
+   margin: auto;
+   width: 90%;
     border: 1px solid rgb(231, 225, 225);
     border-left: none;
     border-right: none;
@@ -16,7 +17,9 @@
     cursor: pointer;
 
 }
-
+#sports_navbar a:hover{
+    color: red;
+}
 #task_bar>a{
     color: #a10a0a;
     padding-bottom: 10px;
@@ -34,10 +37,8 @@ span{
 
 }
 
-
-
 #sliding_image{
-    width:100%;
+    width:90%;
     margin: auto;
     height: 525px;
     background-image:url(https://images.indianexpress.com/2021/12/Carlsen-2.jpg?resize=450,250);
@@ -61,47 +62,74 @@ span{
 }
 
 #middle{
-    height: 450px;
-    width: 100%;
+    width: 90%;
     display: flex;
     gap: 50px;
     margin-top: 40px;
     cursor: pointer;
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
 }
 #middle>div{
     height: auto;
     width: 30%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    justify-content: space-around;
-    margin: auto;
+   
+    padding:20px;
    
 }
+#middle>div:hover{
+    transform: scale(1.1);
+    color: red;
+}
 #middle>div>img{
-    width: 90%;
+    width: 100%;
     height: 70%;
 
 }
-#container{
+#spt_container{
+    width:60%;
     margin-top: 30px;
+    margin:auto;
 }
-#container>div{
+#spt_container>div{
+    width:100%;
     display: flex;
     /* border: 1px solid red; */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin: 100px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
     gap: 50px;
     margin: auto;
-    width: 60%;
     height: auto;
     cursor: pointer;
-    
+    margin-bottom: 20px;
+    padding:20px;
+}
+#spt_container>div:hover{
+    transform: scale(1.1);
+    color: red;
+}
+#spt_container>div>div:nth-child(1){
+    width:40%;
+    height:300px;
+    margin: auto;
+}
+#spt_container>div>div:nth-child(1)  img{
+    width:100%;
+    height:100%;
+}
+#spt_container>div>div:nth-child(2){
+    width:60%;
+    padding:20px;
 }
 
-img{
-    height: 230px;
-    width: 300px;
-    /* border: 1px solid green; */
-    padding: 10px;
-    padding-top: 40px;
-    padding-left: 20px;
+
+#auther{
+    margin:10px 0px;
+}
+
+#auther+p{
+    line-height: 25px;
+    color: gray;
 }

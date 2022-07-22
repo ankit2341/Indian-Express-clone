@@ -5,37 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../allcss/header.css">
-    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="./allcss/header.css">
+    <link rel="stylesheet" href="./Entertainment/entertainment.css">
 </head>
+
 <body>
     <header id="header"></header>
-    <div id="landingcont">
-        <h1 id="heading"></h1>
-        <p id="sub_heading"></p>
-        <hr id="line">
-        <p id="date"></p>
-        <div id="content">
-            <div id="img_video">
-                    <img id="image">
-                </div>
-                <div>
-                    <iframe width="560" height="315" id="playvideo" title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-                </div>
-               
+    <div id="top">
+        <div id="entertainment_navbar">
+            <div id="task_bar">
+                <a href="">Home</a>
+                <span>/entertainment</span>
             </div>
-            <p id="contentappend"></p>
-            <p id="contentappend1"></p>
+
+            <div id="category">
+    
+                <a id="entertainment">ENTERTAINMENT</a>
+                <a id="bollywood">BOLLYWOOD</a>
+                <a id="hollywood">HOLLYWOOD</a>
+                <a id="telivision">TELEVISION</a>
+                <a id="tamil">TAMIL</a>
+                <a id="telugu">TELUGU</a>
+                <a id="malayalam">MALAYALAM</a>
+                <a id="webseries">WEBSERIES</a>
+                <a id="reviews">REVIEWS</a>
+                
+            </div>
         </div>
+    <div id="ent_main">
+        <img src="https://images.indianexpress.com/2022/07/katrina-vicky-maldives-820.jpg" alt="">
     </div>
+    <div id="ent_container"></div>
     <footer id="footer"></footer>
 </body>
 </html>
-<script src="./landing.js"></script>
-<script src="../header/header.js" type="module"></script>
+<script src="./Entertainment/entertainment.js"></script>
+<script src="./header/header.js" type="module"></script>
 
 <script type="module">
     // Header and footer
@@ -88,7 +93,7 @@ let searchresults=async()=>{
     localStorage.setItem("searchdata",JSON.stringify(searchdata));
     localStorage.setItem("searchbox",JSON.stringify(searchbox));
 
-    window.open("../searchresults.html")
+    window.open("searchresults.html")
 
 }
 </script>

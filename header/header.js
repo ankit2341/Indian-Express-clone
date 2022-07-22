@@ -37,8 +37,8 @@ let header=()=>{
     <div><a href="">Political Pulse</a></div>
     <div><a href="india.html">India</a></div>
     <div><a href="city.html">Cities</a></div>
-    <div><a href="project unit 3/entertainment.html">Entertainment</a></div>
-    <div><a href="">Sports</a></div>
+    <div><a href="entertainment.html">Entertainment</a></div>
+    <div><a href="sports.html">Sports</a></div>
     <div><a href="education.html">Education</a></div>
     <div><a href="signIN.html">Sign in</a></div>
     <input type="text" id="searchbox1" placeholder="Type to Search">
