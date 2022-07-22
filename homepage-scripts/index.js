@@ -230,6 +230,11 @@ let appendexexplained=(data)=>{
 
             let img=document.createElement('img');
             img.src=data[i].urlToImage;
+
+            img.addEventListener("click",()=>{
+                localStorage.setItem("clicked_item",JSON.stringify(data[i]));
+                window.location.href="../landingpage/landing.html";
+            })
     
             expressexplained.append(img);
         i++;},1000);

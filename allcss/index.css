@@ -71,7 +71,11 @@ line-height: 20px
 box-shadow: 0 0 5px 5px #dfdfdf;
 background: #fff;
 }
-#topnewstories-head:hover{
+#topnewstories-head a{
+    text-decoration: none;
+    color: black;
+}
+#topnewstories-head a:hover{
     color: #a32020;
 }
 
