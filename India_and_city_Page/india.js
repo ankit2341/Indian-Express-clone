@@ -1,8 +1,8 @@
 // 0f51aa777ab440708430933fba93d8a7
 
-// let Api_Key = "0f51aa777ab440708430933fba93d8a7";
+let Api_Key = "0f51aa777ab440708430933fba93d8a7";
 // 480870360edd4e4b9114fe8724deed7d
-let Api_Key = "480870360edd4e4b9114fe8724deed7d";
+// let Api_Key = "480870360edd4e4b9114fe8724deed7d";
 let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${Api_Key}`
 
 import {getData,append,append_data,appendslide} from "./subnavbar.js"

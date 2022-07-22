@@ -17,6 +17,8 @@ export let append_img=(data)=>{
     let container=document.getElementById("big_img");
     container.innerHTML=null;
     data.forEach((el,i)=>{
+        let { urlToImage, title, description, content, publishedAt } = el;
+        if (urlToImage != null && title != null && description != null && content != null) {
         if(i>data.length-2) {
         let { urlToImage, title } = el;
     let div=document.createElement("div");
@@ -32,13 +34,17 @@ export let append_img=(data)=>{
         })
         container.append(div)
     }
+}
     })
     }
 
 
  export let append = (data)=>{
     let news= document.getElementById('news');
+    news.innerHTML=null;
     data.forEach((el)=>{
+        let { urlToImage, title, description, content, publishedAt } = el;
+        if (urlToImage != null && title != null && description != null && content != null) {
         let img= document.createElement('img')
         img.src= el.urlToImage;
         let h3= document.createElement('h3')
@@ -48,9 +54,10 @@ export let append_img=(data)=>{
         content.append(img,h3);
         content.addEventListener("click", ()=>{
             localStorage.setItem("clicked_item", JSON.stringify(el))
+            window.location.href="../landingpage/landing.html"
         })
         news.append(content);
-
+    }
     })
 
     

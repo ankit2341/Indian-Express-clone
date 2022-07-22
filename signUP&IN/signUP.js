@@ -58,7 +58,7 @@ startVelocity: 45,
     }
 // });
 setTimeout(()=>{
-window.location.href="index.html";
+window.location.href="signIN.html";
 },3000)
 
 }
