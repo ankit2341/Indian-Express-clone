@@ -1,9 +1,16 @@
-let api_key= '480870360edd4e4b9114fe8724deed7d';
+// let api_key= '480870360edd4e4b9114fe8724deed7d';
 
-let url=   `https://newsapi.org/v2/everything?q=political&apiKey=${api_key}`;
-
+// let url=   `https://newsapi.org/v2/everything?q=political&apiKey=${api_key}`;
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c71164da45msh1f47a14d576454dp1f583ajsn5864dad38a50',
+		'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
+	}
+};
+// let query="mumbai";
 let getData=async()=>{
-   let res= await fetch(url);
+   let res= await fetch(`https://free-news.p.rapidapi.com/v1/search?q=politics&lang=en`, options);
    let data= await res.json();
    console.log(data)
    append_data(data.articles);
@@ -19,12 +26,12 @@ let append = (data) => {
     let container = document.getElementById("slideshowdiv");
     container.innerHTML = null;
     setInterval(() => {
-        let { urlToImage, title } = data[i++];
-        if (urlToImage == undefined) {
-            urlToImage = "https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-1.jpg";
+        let { media, title } = data[i++];
+        if (media == undefined) {
+            media = "https://icon-library.com/images/loading-icon-animated-gif/loading-icon-animated-gif-1.jpg";
         }
         let image = document.createElement("img");
-        image.src = urlToImage;
+        image.src = media;
         let name = document.createElement("h3");
         name.innerText = title;
         container.innerHTML = null;
@@ -47,10 +54,10 @@ let appendslide=(data)=>{
     container.innerHTML=null;
     data.forEach((el,i)=>{
         if(i>data.length-3) {
-        let { urlToImage, title } = el;
+        let { media, title } = el;
     let div=document.createElement("div");
     let image = document.createElement("img");
-    image.src = urlToImage;
+    image.src = media;
     let name = document.createElement("h4");
         name.innerText = title;
         div.append(image,name);
@@ -69,21 +76,21 @@ let appendslide=(data)=>{
         let container = document.getElementById("political_page");
         container.innerHTML = null;
         data.forEach((el) => {
-            let { urlToImage, title, description, content, publishedAt } = el;
-            if (urlToImage != null && title != null && description != null && content != null) {
-                let image = document.createElement("img");
-                image.src = urlToImage;
-                let divimage = document.createElement("div");
-                divimage.append(image);
-                let name = document.createElement("h3");
-                name.innerText = title;
-                let date = document.createElement("p");
-                date.innerText = publishedAt;
-                let decs = document.createElement("p");
-                decs.innerText = description;
-                let divcont = document.createElement("div");
-                divcont.setAttribute("id", "content")
-                divcont.append(name, date, decs)
+            let { media, title, summary, published_date } = el;
+        if (media != null && title != null && summary != null) {
+            let image = document.createElement("img");
+            image.src = media;
+            let divimage = document.createElement("div");
+            divimage.append(image);
+            let name = document.createElement("h3");
+            name.innerText = title;
+            let date = document.createElement("p");
+            date.innerText = published_date;
+            let decs = document.createElement("p");
+            decs.innerText = title+title;
+            let divcont = document.createElement("div");
+            divcont.setAttribute("id", "content")
+            divcont.append(name, date,decs)
                 let div = document.createElement("div");
                 div.addEventListener("click",()=>{
                     localStorage.setItem("clicked_item",JSON.stringify(el));

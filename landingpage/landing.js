@@ -23,7 +23,7 @@ let contented=document.getElementById("contentappend1");
 contented.innerText=summary+summary+summary;
 
 let Search_video=async (title)=>{
-    let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=AIzaSyAIB4jHlWzc35ckthAE7Wsin748c3KGbF0`);
+    let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=AIzaSyCbH_8H1YiQuNe9IIbard7T61S9q8JH94s`);
     let data=await res.json()
     let id= data.items[0].id.videoId;
     let video=document.getElementById("playvideo");

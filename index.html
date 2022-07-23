@@ -162,7 +162,7 @@ const options = {
  .then(function(response){
        console.log(response.articles);
 
-       searchdata=[];
+      let searchdata=[];
         searchdata.push(response.articles);
     
         localStorage.setItem("searchdata",JSON.stringify(searchdata));
