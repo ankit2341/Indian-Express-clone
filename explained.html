@@ -81,23 +81,40 @@ function myFunction() {
   }
 }
  //  Search code 
- document.getElementById("searchres").addEventListener("click",()=>{
-    searchresults();
- })
-let searchresults=async()=>{
-    var searchbox=document.getElementById("searchbox1").value;
+ const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c71164da45msh1f47a14d576454dp1f583ajsn5864dad38a50',
+		'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
+	}
+};
 
-    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
 
-    let res=await fetch(url);
-    let data=await res.json();
-    let searchdata=[];
-    searchdata.push(data.articles);
+    let searchresults=()=>{
+        var searchbox=document.getElementById("searchbox1").value;
+    
+        setTimeout(() => {
+       
+       fetch(`https://free-news.p.rapidapi.com/v1/search?q=${searchbox}&lang=en`, options)
+ .then(function(response){return response.json()})
+ .then(function(response){
+       console.log(response.articles);
 
-    localStorage.setItem("searchdata",JSON.stringify(searchdata));
-    localStorage.setItem("searchbox",JSON.stringify(searchbox));
+     let  searchdata=[];
+        searchdata.push(response.articles);
+    
+        localStorage.setItem("searchdata",JSON.stringify(searchdata));
+        localStorage.setItem("searchbox",JSON.stringify(searchbox));
+    
+        window.open("searchresults.html")
+       
+   })
+ .catch(err => console.error(err));
 
-    window.open("searchresults.html")
-
-}
+     }, "1000");     
+    
+    }
+    document.getElementById("searchres").addEventListener("click",()=>{
+        searchresults();
+     })
 </script>
