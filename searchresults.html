@@ -85,13 +85,13 @@
             div.style.padding="20px 20px 40px 20px";
 
             let img=document.createElement("img");
-            img.src=searchdata[i].urlToImage;
+            img.src=searchdata[i].media;
 
             let h3=document.createElement("h3");
             h3.innerText=searchdata[i].title;
 
             let p=document.createElement("p");
-            p.innerText=searchdata[i].publishedAt;
+            p.innerText=searchdata[i].published_date;
 
             div.addEventListener("click",()=>{
                 localStorage.setItem("clicked_item",JSON.stringify(searchdata[i]));
@@ -114,21 +114,38 @@
 
 <script>
 
-let searchresults=async()=>{
-    var searchbox=document.getElementById("searchbox1").value;
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c71164da45msh1f47a14d576454dp1f583ajsn5864dad38a50',
+		'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
+	}
+};
 
-    let url=`https://newsapi.org/v2/everything?q=${searchbox}&from=2022-07-20&sortBy=popularity&apiKey=db8356f1cb1749468c0c2af5dfddd0f5`
 
-    let res=await fetch(url);
-    let data=await res.json();
-     searchdata=[];
-    searchdata.push(data.articles);
+    let searchresults=()=>{
+        var searchbox=document.getElementById("searchbox1").value;
+    
+        setTimeout(() => {
+       
+       fetch(`https://free-news.p.rapidapi.com/v1/search?q=${searchbox}&lang=en`, options)
+ .then(function(response){return response.json()})
+ .then(function(response){
+       console.log(response.articles);
 
-    localStorage.setItem("searchdata",JSON.stringify(searchdata));
-    localStorage.setItem("searchbox",JSON.stringify(searchbox));
+       searchdata=[];
+        searchdata.push(response.articles);
+    
+        localStorage.setItem("searchdata",JSON.stringify(searchdata));
+        localStorage.setItem("searchbox",JSON.stringify(searchbox));
+    
+        window.open("searchresults.html")
+       
+   })
+ .catch(err => console.error(err));
 
-    window.open("searchresults.html")
-
-}
+     }, "1000");     
+    
+    }
 </script>
 

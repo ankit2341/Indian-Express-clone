@@ -29,23 +29,51 @@ function myFunction() {
     navbar.style.position= "static";
   }
 }
+// -----------------------------------------------------------------------------------------------------------------
+
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'c71164da45msh1f47a14d576454dp1f583ajsn5864dad38a50',
+		'X-RapidAPI-Host': 'free-news.p.rapidapi.com'
+	}
+};
+// let query="narendra modi";
+
+// fetch(`https://free-news.p.rapidapi.com/v1/search?q=${query}&lang=en`, options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response.articles))
+// 	.catch(err => console.error(err));
+
+
 
 
 // ---------------------------------------------topnew----------------------------------------------------------------
     
 
-const topnewurl=`https://newsapi.org/v2/everything?q=india&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
-let gettopnew=async()=>{
 
-    let res=await fetch(topnewurl);
-    let data=await res.json();
+let gettopnew=()=>{
 
-    appendtopnew(data.articles);
+
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=headlines&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendtopnew(response.articles);
+    })
+	.catch(err => console.error(err));
+
+      }, "1000"); 
+
+    
     
 }
 
-gettopnew()
+gettopnew();
 
 let appendtopnew=(data)=>{
     let trending=document.getElementById("topnewstories");
@@ -55,10 +83,10 @@ let appendtopnew=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
 
     div.append(h3,img,p);
     div.addEventListener("click",()=>{
@@ -70,12 +98,12 @@ let appendtopnew=(data)=>{
 
       
     let topnewstoriesside=document.getElementById("topnewstories-side");
-   for(let i=1;i<=6;i++){
+   for(let i=5;i<=10;i++){
       let div=document.createElement("div");
 
       let p=document.createElement("p");
       p.innerText=data[i].title;
-
+      
       div.append(p);
 
       div.addEventListener("click",()=>{
@@ -88,17 +116,27 @@ let appendtopnew=(data)=>{
 }
 
 
+
+
 // ----------------------------------------------------trending--------------------------------------------------
 
 
-const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const trendingurl=`https://newsapi.org/v2/everything?q=trending&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let gettrending=async()=>{
 
-    let res=await fetch(trendingurl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=trending&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendtrending(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendtrending(data.articles);
+      }, "3000"); 
+
     
 }
 
@@ -114,7 +152,7 @@ let appendtrending=(data)=>{
         h3.innerText=data[i].title;
     
         let img=document.createElement("img");
-        img.src=data[i].urlToImage;
+        img.src=data[i].media;
 
         div.addEventListener("click",()=>{
             localStorage.setItem("clicked_item",JSON.stringify(data[i]));
@@ -148,14 +186,20 @@ let appendtrending=(data)=>{
 
 
 
-const mumbaiurl=`https://newsapi.org/v2/everything?q=mumbai&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const mumbaiurl=`https://newsapi.org/v2/everything?q=mumbai&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getmumbai=async()=>{
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=mumbai&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendmumbai(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    let res=await fetch(mumbaiurl);
-    let data=await res.json();
-
-    appendmumbai(data.articles);
+      }, "5000"); 
     
 }
 
@@ -169,10 +213,10 @@ let appendmumbai=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
 
     div.addEventListener("click",()=>{
         localStorage.setItem("clicked_item",JSON.stringify(data[0]));
@@ -207,14 +251,21 @@ let appendmumbai=(data)=>{
 
 
 
-const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const exexplainedurl=`https://newsapi.org/v2/everything?q=important&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getexexplained=async()=>{
 
-    let res=await fetch(exexplainedurl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=important&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendexexplained(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendexexplained(data.articles);
+      }, "7000"); 
     
 }
 
@@ -229,7 +280,7 @@ let appendexexplained=(data)=>{
             }
 
             let img=document.createElement('img');
-            img.src=data[i].urlToImage;
+            img.src=data[i].media;
 
             img.addEventListener("click",()=>{
                 localStorage.setItem("clicked_item",JSON.stringify(data[i]));
@@ -245,13 +296,20 @@ let appendexexplained=(data)=>{
 // -----------------------------------only on express---------------------------------------------
 
 
-const onlyonurl=`https://newsapi.org/v2/everything?q=exclusive&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`
+//const onlyonurl=`https://newsapi.org/v2/everything?q=exclusive&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`
 let getonlyon=async()=>{
 
-    let res=await fetch(onlyonurl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=world&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendonlyon(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendonlyon(data.articles);
+      }, "9000"); 
     
 }
 
@@ -265,10 +323,10 @@ let appendonlyon=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
 
     div.append(img,h3,p);
 
@@ -282,7 +340,7 @@ let appendonlyon=(data)=>{
 
     let div2=document.createElement("div");
     let img2=document.createElement("img");
-    img2.src=data[1].urlToImage;
+    img2.src=data[1].media;
 
     let h32=document.createElement("p");
     h32.innerText=data[1].title;
@@ -296,7 +354,7 @@ let appendonlyon=(data)=>{
 
     let div3=document.createElement("div");
     let img3=document.createElement("img");
-    img3.src=data[2].urlToImage;
+    img3.src=data[2].media;
 
     let h33=document.createElement("p");
     h33.innerText=data[2].title;
@@ -333,14 +391,21 @@ let appendonlyon=(data)=>{
 // -------------------------------------------entertainment-------------------------------------------
 
 
-const entertainurl=`https://newsapi.org/v2/everything?q=hollywood&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const entertainurl=`https://newsapi.org/v2/everything?q=hollywood&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getentertain=async()=>{
 
-    let res=await fetch(entertainurl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=bollywood&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendentertain(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendentertain(data.articles);
+      }, "11000"); 
     
 }
 
@@ -354,10 +419,11 @@ let appendentertain=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
+    p.style.marginTop="20px"
 
     div.append(img,h3,p);
 
@@ -371,7 +437,7 @@ let appendentertain=(data)=>{
 
     let div2=document.createElement("div");
     let img2=document.createElement("img");
-    img2.src=data[1].urlToImage;
+    img2.src=data[1].media;
 
     let h32=document.createElement("p");
     h32.innerText=data[1].title;
@@ -384,7 +450,7 @@ let appendentertain=(data)=>{
 
     let div3=document.createElement("div");
     let img3=document.createElement("img");
-    img3.src=data[2].urlToImage;
+    img3.src=data[2].media;
 
     let h33=document.createElement("p");
     h33.innerText=data[2].title;
@@ -421,14 +487,21 @@ let appendentertain=(data)=>{
 
 
 
-const sporturl=`https://newsapi.org/v2/everything?q=football&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const sporturl=`https://newsapi.org/v2/everything?q=football&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let getsport=async()=>{
 
-    let res=await fetch(sporturl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=cricket&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendsport(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendsport(data.articles);
+      }, "13000"); 
     
 }
 
@@ -442,10 +515,10 @@ let appendsport=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
 
     div.append(img,h3,p);
     div.addEventListener("click",()=>{
@@ -459,7 +532,7 @@ let appendsport=(data)=>{
 
     let div2=document.createElement("div");
     let img2=document.createElement("img");
-    img2.src=data[1].urlToImage;
+    img2.src=data[1].media;
 
     let h32=document.createElement("p");
     h32.innerText=data[1].title;
@@ -472,7 +545,7 @@ let appendsport=(data)=>{
 
     let div3=document.createElement("div");
     let img3=document.createElement("img");
-    img3.src=data[2].urlToImage;
+    img3.src=data[2].media;
 
     let h33=document.createElement("p");
     h33.innerText=data[2].title;
@@ -508,14 +581,21 @@ let appendsport=(data)=>{
 // ------------------------------------------education-----------------------------------
 
 
-const educationurl=`https://newsapi.org/v2/everything?q=education&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
+//const educationurl=`https://newsapi.org/v2/everything?q=education&from=2022-07-20&sortBy=popularity&apiKey=0f51aa777ab440708430933fba93d8a7`;
 
 let geteducation=async()=>{
 
-    let res=await fetch(educationurl);
-    let data=await res.json();
+    setTimeout(() => {
+       
+        fetch(`https://free-news.p.rapidapi.com/v1/search?q=education&lang=en`, options)
+	.then(function(response){return response.json()})
+	.then(function(response){
+        console.log(response.articles)
+        appendeducation(response.articles);
+    })
+	.catch(err => console.error(err));
 
-    appendeducation(data.articles);
+      }, "15000"); 
     
 }
 
@@ -529,10 +609,10 @@ let appendeducation=(data)=>{
     h3.innerText=data[0].title;
 
     let img=document.createElement("img");
-    img.src=data[0].urlToImage;
+    img.src=data[0].media;
 
     let p=document.createElement("p");
-    p.innerText=data[0].description;
+    p.innerText=data[0].published_date;
 
     div.append(h3,img,p);
     div.addEventListener("click",()=>{

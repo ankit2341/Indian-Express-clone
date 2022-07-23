@@ -1,26 +1,26 @@
 let data=JSON.parse(localStorage.getItem("clicked_item"));
 console.log('data:', data)
 
-let {title,description,publishedAt,urlToImage,content}=data
+let {title,summary,published_date,media}=data
 
 let head=document.getElementById("heading")
 head.innerText=title;
 
 let sub_head=document.getElementById("sub_heading")
-sub_head.innerHTML=description;
+sub_head.innerHTML=summary;
 
 // publishedAt
 let date=document.getElementById("date");
-date.innerText=`Updated: ${publishedAt}`
+date.innerText=`Updated: ${published_date}`
 
 let image=document.getElementById("image");
-image.src=urlToImage;
+image.src=media;
 
 let contents=document.getElementById("contentappend");
-contents.innerText=content+content+content;
+contents.innerText=summary+summary+summary;
 
 let contented=document.getElementById("contentappend1");
-contented.innerText=content+content+content;
+contented.innerText=summary+summary+summary;
 
 let Search_video=async (title)=>{
     let res=await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${title}&key=AIzaSyAIB4jHlWzc35ckthAE7Wsin748c3KGbF0`);
