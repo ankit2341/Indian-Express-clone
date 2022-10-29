@@ -275,7 +275,7 @@ let appendexexplained=(data)=>{
   let expressexplained=document.getElementById("express-explained");
      let i=7;
         setInterval(function(){
-            if(i==11){
+            if(i>11){
                 i=7;
             }
 
