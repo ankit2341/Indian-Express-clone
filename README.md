@@ -19,7 +19,7 @@
 This project is clone of well known website known as Indian Express builded by us. The purpose of building this project is only and only for educational purposes. All copyrights are reserved by Indian Express. We hereby declare that we will not use this for any bad purposes. Thank You!
 ## Screenshots
 
-[![indian-express-clone-1.png](https://i.postimg.cc/VL3NkXKL/indian-express-clone-1.png)](https://postimg.cc/ppJv05Ng)
+[![ieupdated1.jpg](https://i.postimg.cc/TPzQP1Mq/ieupdated1.jpg)](https://postimg.cc/t1zFSXgY)
 
 [![indian-express-clone-3.png](https://i.postimg.cc/65G9gyBs/indian-express-clone-3.png)](https://postimg.cc/HVdD7WJ3)
 
