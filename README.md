@@ -29,7 +29,7 @@ This project is clone of well known website known as Indian Express builded by u
 
 [![indian-express-clone-7.png](https://i.postimg.cc/rpysBMhS/indian-express-clone-7.png)](https://postimg.cc/YvVtgKB9)
 
-[![indian-express-clone-8.png](https://i.postimg.cc/5yz2B00M/indian-express-clone-8.png)](https://postimg.cc/fSwsZMmH)
+[![ieupdated2.jpg](https://i.postimg.cc/DZshWSW2/ieupdated2.jpg)](https://postimg.cc/KkZwwvrV)
 
 [![indian-express-clone-9.png](https://i.postimg.cc/Jnf1zLQY/indian-express-clone-9.png)](https://postimg.cc/LYVdxGwj)
 ## Demo
