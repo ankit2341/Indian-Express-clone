@@ -1,12 +1,13 @@
 #main{
     width: 30%;
-    height: 840px;
+    height: 990px;
     margin: auto;
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
  text-align: center;
  margin-top: 3%;
  border-radius: 20px;
  padding: 0.5%;
+ margin-bottom: 100px;
 }
 #main>div>img{
     width: 20px;
@@ -16,7 +17,7 @@
 }
 #top{
     color: gray;
-    margin-top: -4%;
+    margin-top: 4%;
    
 }
 
@@ -57,8 +58,8 @@ h1{
 input{
  border: 1px solid rgb(244, 240, 240);
  border-radius: 10px;
-    height: 30px;
-   width: 80%;
+    height: 50px;
+   width: 70%;
    margin-bottom: 4%;
   
 }
@@ -88,6 +89,11 @@ button{
     background-color: white;
     border: 1px solid skyblue;
 }
+button:hover{
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
 #lastP{
 margin-top: 2%;
 margin-bottom: 1%;
@@ -100,7 +106,8 @@ margin-bottom: 1%;
 }
 #nevbar{
    display: flex;
-
+padding-top: 15px;
+padding-left: 20px;
    
 }
 #nevbar>p>img{

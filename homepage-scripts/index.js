@@ -1,5 +1,7 @@
 import {header,footer} from "../header/header.js";
 
+
+
 document.getElementById("header").innerHTML=header();
 document.getElementById("footer").innerHTML=footer();
 
@@ -288,7 +290,7 @@ let appendexexplained=(data)=>{
             })
     
             expressexplained.append(img);
-        i++;},1000);
+        i++;},4000);
        
     }
 

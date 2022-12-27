@@ -4,20 +4,21 @@ async function Login(){
         password:document.getElementById("login-password").value
     }
     login_data=JSON.stringify(login_data);
-    let login_api_link="https://masai-api-mocker.herokuapp.com/auth/login";
-    let response=await fetch(login_api_link,{
-        method:'POST',
-        body:login_data,
-        node:'no-cors',
-        headers:
-        {
-            'Content-Type':'application/json',
-        },
-    });
+    let login_api_link="https://mocker-api.onrender.com/users";
+    let response=await fetch(`${login_api_link}`)
     let data= await response.json();
-    console.log('data:',data)
-    if(data.error===false){
-        alert("LogIn successfully")
+    console.log('data:',data);
+    
+    let email_user=document.getElementById("login-username").value
+    let filtereddata=data.filter((el)=>{
+      return el.email===email_user
+    });
+    console.log(filtereddata)
+    
+    if(filtereddata.length>0){
+        alert("LogIn successfully");
+        localStorage.removeItem("logindata");
+        localStorage.setItem("logindata",JSON.stringify(filtereddata))
         // document.querySelector("signIN").addEventListener("click", () => {
         for(let i=0;i<=1;i++){
             var count = 200;
@@ -54,13 +55,13 @@ fire(0.1, {
         }
 // });
 setTimeout(()=>{
-    window.location.href="index.html";
+     window.location.href="index.html";
 },3000)
         
     }else{
         alert("LogIn unsuccessfully");
-        window.location.href="./home.html";
-
+        window.location.href="signUP.html"
+       
     }
     
 }

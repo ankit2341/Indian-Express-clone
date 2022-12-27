@@ -4,12 +4,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="allcss/header.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     <title>results</title>
 </head>
 <style>
+    .ad_side{
+    left: 30px;
+    border: 1px solid;
+    width: 200px;
+    height: 500px;
+    top: 200px;
+    position: fixed;
+}
+.ad_side img{
+    width: 200px;
+    height: 500px;
+}
+.ad_side_2 img{
+    width: 200px;
+    height: 500px;
+}
+.ad_side_2{
+    position: fixed;
+    top: 200px;
+    right: 30px;
+    border: 1px solid;
+    width: 200px;
+    height: 300px;
+}
     #results{
         width: 81%;
-        height: 1400px;
+        height: auto;
         display: grid;
         grid-template-columns: repeat(3,25%);
         grid-template-rows: repeat(auto,200px);
@@ -35,16 +64,61 @@
         margin-top: 10px;
         font-size: small;
     }
-    #footer{
-        margin-top: 1450px;
-    }
     #search-results{
         margin: auto;
         margin-bottom: 20px;
         text-align: center;
     }
+
+    @media screen and (max-width:1000px) {
+    .ad_side{
+       display: none;
+    }
+    .ad_side img{
+        display: none;
+    }
+    .ad_side_2 img{
+        display: none;
+    }
+    .ad_side_2{
+        display: none;
+    }
+    #results{
+        width: 81%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-rows: repeat(auto,200px);
+        grid-gap: 30px ;
+        margin-left: 10%;
+    }
+    #header{
+        width: 100%;
+        height: 200px;
+    }
+    #tophead{
+        display: none;
+    }
+    #bottomhead{
+        width: auto;
+    }
+   
+    #footer{
+        width: 100%;
+    }
+    #follow{
+        display: none;
+    }
+}
 </style>
 <body>
+    <div class="ad_side">
+        <img src="https://cdn.cp.adobe.io/content/2/rendition/e83750e9-e6b8-4a39-944c-c27966c04113/artwork/342419a1-d771-4247-876b-f20697ec1e1f/version/0/format/jpg/dimension/width/size/400" alt="">
+      </div>
+      <div class="ad_side_2">
+        <img src="https://cdn.cp.adobe.io/content/2/rendition/2bc139e1-af58-426c-8a0e-a32b224e1a20/artwork/3fc16eb5-d0bf-44f3-a0e4-e7674b9ebf56/version/0/format/jpg/dimension/width/size/400" alt="">
+      </div>
+      
     <div id="header">
 
     </div>

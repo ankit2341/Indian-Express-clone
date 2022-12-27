@@ -40,11 +40,47 @@ let header=()=>{
     <div><a href="entertainment.html">Entertainment</a></div>
     <div><a href="sports.html">Sports</a></div>
     <div><a href="education.html">Education</a></div>
-    <div><a href="signIN.html">Sign in</a></div>
-    <input type="text" id="searchbox1" placeholder="Type to Search">
-    <div id="searchres" onClick="searchresults()"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>
-    
+    <div ><a href="signIN.html" id="dignIn">Sign in</a></div>
+    <button type="button"  style="color:#fff;background:#000;border:"1px solid" data-toggle="modal" data-target="#exampleModalCenter">
+    <div ><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="20" height="20" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>  
+    </div>
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg " style="width:100%;height:100vh" role="document">
+    <div class="modal-content" style="padding:"100px 100px">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Search for news</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="input-group mb-3">
+  <input type="text" id="searchbox1" placeholder="Type to Search" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" id="searchres" onClick="searchresults()" type="button"> <div ><svg xmlns="http://www.w3.org/2000/svg" fill="#000" width="20" height="20" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg></div>  
+    </div></button>
+  </div>
 </div>
+     
+    </div>
+  </div>
+</div>
+   </div>
+</div>
+<script>
+let logindata=JSON.parse(localStorage.getItem("logindata"))||[];
+console.log(logindata,logindata[0].email)
+if(logindata.length>0){
+    document.getElementById("dignIn").innerHTML=logindata[0].email
+}
+else{
+  document.getElementById("dignIn").innerHTML="Sign i"
+}
+
+</script>
+
 
 
 

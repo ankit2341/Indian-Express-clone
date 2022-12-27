@@ -39,3 +39,59 @@ iframe{
     line-height: 30px;
     font-size: 18px;
 }
+.ad_side{
+    left: 30px;
+    border: 1px solid;
+    width: 250px;
+    height: 500px;
+    top: 200px;
+    position: fixed;
+}
+.ad_side img{
+    width: 250px;
+    height: 500px;
+}
+.ad_side_2 img{
+    width: 250px;
+    height: 500px;
+}
+.ad_side_2{
+    position: fixed;
+    top: 200px;
+    right: 30px;
+    border: 1px solid;
+    width: 250px;
+    height: 300px;
+}
+@media screen and (max-width:1000px) {
+    .ad_side{
+       display: none;
+    }
+    .ad_side img{
+        display: none;
+    }
+    .ad_side_2 img{
+        display: none;
+    }
+    .ad_side_2{
+        display: none;
+    }
+    #header{
+        width: 100%;
+        height: 200px;
+    }
+    #tophead{
+        display: none;
+    }
+    #bottomhead{
+        width: auto;
+    }
+   
+    #footer{
+        width: 110%;
+    }
+    #follow{
+        display: none;
+    }
+    
+}

@@ -9,7 +9,7 @@ async function Register(){
      
     };
     signup_data=JSON.stringify(signup_data);
-    let signup_api_link="https://masai-api-mocker.herokuapp.com/auth/register";
+    let signup_api_link="https://mocker-api.onrender.com/users";
     //custome seting object
     //POST
     let response=await fetch(signup_api_link,{
@@ -22,7 +22,7 @@ async function Register(){
     });
     let data= await response.json();
     console.log('data:',data)
-    alert(data.message);
+    alert("Signed up Successfully!");
     for(let i=0;i<=1;i++){
         var count = 200;
 var defaults = {
