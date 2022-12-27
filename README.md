@@ -31,7 +31,9 @@ This project is clone of well known website known as Indian Express builded by u
 
 [![ieupdated2.jpg](https://i.postimg.cc/DZshWSW2/ieupdated2.jpg)](https://postimg.cc/KkZwwvrV)
 
-[![indian-express-clone-9.png](https://i.postimg.cc/Jnf1zLQY/indian-express-clone-9.png)](https://postimg.cc/LYVdxGwj)
+[![ieupdated3.jpg](https://i.postimg.cc/xT1Zhk0c/ieupdated3.jpg)](https://postimg.cc/bd4L2wSh)
+
+[![ieupdated4.jpg](https://i.postimg.cc/nzTkGk9T/ieupdated4.jpg)](https://postimg.cc/CBBkFbNf)
 ## Demo
 
 deployed link for demo:- https://astounding-froyo-9f44a4.netlify.app/
